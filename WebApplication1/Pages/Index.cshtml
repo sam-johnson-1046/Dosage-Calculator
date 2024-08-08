@@ -1,0 +1,139 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Dosage Calculator";
+}
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">Dosage Calculator</h1>
+        <p>Please enter the details below to calculate the dosage:</p>
+    </div>
+
+    <form id="dosage-form" class="form-group">
+        <label for="isTakingStiripentumab">Is the patient currently taking Stiripentumab?</label>
+        <select id="isTakingStiripentumab" class="form-control">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+
+        <label for="dose">Required Dose (mg/kg/day):</label>
+        <input type="number" id="dose" class="form-control" required>
+
+        <label for="weight">Patient's Weight (kg):</label>
+        <input type="number" id="weight" class="form-control" required>
+
+        <button type="button" class="btn btn-primary mt-3" onclick="calculateDosage()">Calculate</button>
+    </form>
+
+    <div id="output" class="mt-5">
+        <h2>Prescription Details</h2>
+        <p><strong>Rounded daily dose (mL):</strong> <span id="rounded-daily-dose"></span></p> @* assume they want the rounded *@
+        <p><strong>Bottle Size:</strong> <span id="bottle-size"></span></p>
+        <p><strong>Number of Bottles per Delivery:</strong> <span id="bottles-per-delivery"></span></p>
+        <p><strong>Total Day Supply:</strong> <span id="total-day-supply"></span></p>
+
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    let doseData = [];
+    let maxDailyDose = 20; // Default max daily dose
+
+    // Load JSON data
+    $.getJSON('data.json')
+        .done(data => {
+            doseData = data.Sheet1; 
+            console.log('Loaded dose data:', doseData);
+        })
+        .fail((jqXHR, textStatus, errorThrown) => {
+            console.error('Error loading JSON data:', textStatus, errorThrown);
+        });
+
+    function calculateDosage() {
+        const isTakingStiripentumab = document.getElementById("isTakingStiripentumab").value === "true";
+        const weight = parseFloat(document.getElementById("weight").value);
+        const dose = parseFloat(document.getElementById("dose").value);
+
+        // Update max daily dose based on whether the patient is taking Stiripentumab
+        maxDailyDose = isTakingStiripentumab ? 20 : 30;
+
+        const theoDailyDose = weight * dose;
+        const actualDailyDose = theoDailyDose > maxDailyDose ? maxDailyDose : theoDailyDose;
+        const twiceDailyDose = actualDailyDose / 5;
+        const roundedTwiceDailyDose = roundTwiceDailyDose(twiceDailyDose);
+
+        document.getElementById("rounded-daily-dose").innerText = roundedTwiceDailyDose.toFixed(2);
+
+        if (Array.isArray(doseData)) {
+
+            const bottleDetails = findBottleDetails(roundedTwiceDailyDose);
+
+            if (bottleDetails) {
+                document.getElementById("bottle-size").innerText = bottleDetails["Bottle Size (ml)"] + " mL";
+                document.getElementById("bottles-per-delivery").innerText = bottleDetails["Number bottles per delievery"];
+                document.getElementById("total-day-supply").innerText = bottleDetails["Total day Supply"] + " days";
+            } else {
+                document.getElementById("bottle-size").innerText = 'No suitable bottle size found.';
+                document.getElementById("bottles-per-delivery").innerText = 'N/A';
+                document.getElementById("total-day-supply").innerText = 'N/A';
+            }
+        } else {
+            console.error('doseData is not an array or is not defined.');
+        }
+    }
+
+    function roundTwiceDailyDose(dose) {
+        if (dose <= 1.5) {
+            return Math.round(dose * 10) / 10;
+        } else {
+            return Math.round(dose * 2) / 2;
+        }
+    }
+
+    function findBottleDetails(roundedDose) {
+        if (!Array.isArray(doseData)) {
+            console.error('doseData is not an array.');
+            return null;
+        }
+
+        for (const bottle of doseData) {
+            if (parseFloat(bottle["Twice Daily Dose(ml)"]) === roundedDose) {
+                return bottle;
+            }
+        }
+        return null; 
+    }
+</script>
+
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h1, h2 {
+        color: purple;
+    }
+
+    #output {
+        border-top: 2px solid purple;
+        padding-top: 20px;
+    }
+
+    .form-control {
+        margin-bottom: 15px;
+    }
+</style>

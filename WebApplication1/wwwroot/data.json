@@ -1,0 +1,165 @@
+{
+  "Sheet1": [
+    {
+      "Twice Daily Dose(ml)": "0.2",
+      "Bottle Size (ml)": "30",
+      "Number bottles per delievery": "1",
+      "Total day Supply": "75",
+      "Number month Supply": "2.5"
+    },
+    {
+      "Twice Daily Dose(ml)": "0.3",
+      "Bottle Size (ml)": "30",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "100",
+      "Number month Supply": "3.5"
+    },
+    {
+      "Twice Daily Dose(ml)": "0.4",
+      "Bottle Size (ml)": "30",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "75",
+      "Number month Supply": "2.5"
+    },
+    {
+      "Twice Daily Dose(ml)": "0.5",
+      "Bottle Size (ml)": "30",
+      "Number bottles per delievery": "3",
+      "Total day Supply": "90",
+      "Number month Supply": "3"
+    },
+    {
+      "Twice Daily Dose(ml)": "0.6",
+      "Bottle Size (ml)": "60",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "100",
+      "Number month Supply": "3.3"
+    },
+    {
+      "Twice Daily Dose(ml)": "0.7",
+      "Bottle Size (ml)": "60",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "86",
+      "Number month Supply": "2.9"
+    },
+    {
+      "Twice Daily Dose(ml)": "0.8",
+      "Bottle Size (ml)": "60",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "75",
+      "Number month Supply": "2.5"
+    },
+    {
+      "Twice Daily Dose(ml)": "0.9",
+      "Bottle Size (ml)": "60",
+      "Number bottles per delievery": "3",
+      "Total day Supply": "100",
+      "Number month Supply": "3.3"
+    },
+    {
+      "Twice Daily Dose(ml)": "1",
+      "Bottle Size (ml)": "60",
+      "Number bottles per delievery": "3",
+      "Total day Supply": "90",
+      "Number month Supply": "3"
+    },
+    {
+      "Twice Daily Dose(ml)": "1.1",
+      "Bottle Size (ml)": "120",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "109",
+      "Number month Supply": "3.6"
+    },
+    {
+      "Twice Daily Dose(ml)": "1.2",
+      "Bottle Size (ml)": "120",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "100",
+      "Number month Supply": "3.3"
+    },
+    {
+      "Twice Daily Dose(ml)": "1.3",
+      "Bottle Size (ml)": "120",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "92",
+      "Number month Supply": "3.1"
+    },
+    {
+      "Twice Daily Dose(ml)": "1.4",
+      "Bottle Size (ml)": "120",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "86",
+      "Number month Supply": "2.9"
+    },
+    {
+      "Twice Daily Dose(ml)": "1.5",
+      "Bottle Size (ml)": "120",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "80",
+      "Number month Supply": "2.7"
+    },
+    {
+      "Twice Daily Dose(ml)": "2",
+      "Bottle Size (ml)": "120",
+      "Number bottles per delievery": "3",
+      "Total day Supply": "90",
+      "Number month Supply": "3"
+    },
+    {
+      "Twice Daily Dose(ml)": "2.5",
+      "Bottle Size (ml)": "250",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "100",
+      "Number month Supply": "3.3"
+    },
+    {
+      "Twice Daily Dose(ml)": "3",
+      "Bottle Size (ml)": "250",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "83",
+      "Number month Supply": "2.8"
+    },
+    {
+      "Twice Daily Dose(ml)": "3.5",
+      "Bottle Size (ml)": "250",
+      "Number bottles per delievery": "3",
+      "Total day Supply": "107",
+      "Number month Supply": "3.6"
+    },
+    {
+      "Twice Daily Dose(ml)": "4",
+      "Bottle Size (ml)": "360",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "90",
+      "Number month Supply": "3"
+    },
+    {
+      "Twice Daily Dose(ml)": "4.5",
+      "Bottle Size (ml)": "360",
+      "Number bottles per delievery": "2",
+      "Total day Supply": "80",
+      "Number month Supply": "2.7"
+    },
+    {
+      "Twice Daily Dose(ml)": "5",
+      "Bottle Size (ml)": "360",
+      "Number bottles per delievery": "3",
+      "Total day Supply": "108",
+      "Number month Supply": "3.6"
+    },
+    {
+      "Twice Daily Dose(ml)": "5.5",
+      "Bottle Size (ml)": "360",
+      "Number bottles per delievery": "3",
+      "Total day Supply": "98",
+      "Number month Supply": "3.3"
+    },
+    {
+      "Twice Daily Dose(ml)": "6",
+      "Bottle Size (ml)": "360",
+      "Number bottles per delievery": "3",
+      "Total day Supply": "90",
+      "Number month Supply": "3"
+    }
+  ]
+}
